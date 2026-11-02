@@ -36,12 +36,12 @@ exec wl-paste --type image --watch cliphist store
 # Tiling Sistemi
 exec_always killall autotiling; autotiling
 
-# 15 Dakika (900s) Boşta Kalırsa Ekranı Otomatik Kilitle ve 16 dakika Olursa paneli kapat
+# EKRAN KİLİT VE PANEL GÜÇ TASARRUFU (SWAYIDLE)
 exec swayidle -w \
-    timeout 900 'swaylock -c 000000' \
-    timeout 960 'swaymsg "output * dpms off"' \
+    timeout 900 'swaylock -f -c 000000' \
+    timeout 1200 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
-    before-sleep 'swaylock -c 000000'
+    before-sleep 'swaylock -f -c 000000'
 
 # XDG Desktop Portal Başlatıcı
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
