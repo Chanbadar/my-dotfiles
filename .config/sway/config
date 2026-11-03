@@ -88,6 +88,9 @@ bindsym $mod+Shift+e exec wlogout
 # Alt+Tab Pencere Geçişi (Rofi ile açık pencereler arası geçiş)
 bindsym Mod1+Tab exec rofi -show window
 
+# fd ile Ev Dizinindeki Klasörleri Arayıp Thunar ile Aç (Meta+Shift+D)
+bindsym $mod+Shift+d exec bash -c 'target=$(fd --type d --hidden --exclude .git . ~ | rofi -dmenu -i -p "Search Folder:"); [ -n "$target" ] && thunar "$target"'
+
 # Rahatsız Etme Modu (Meta+Shift+N) - Bildirimleri Aç / Kapat
 bindsym $mod+Shift+n exec bash -c 'if makoctl mode | grep -q "dnd"; then makoctl mode -r dnd; notify-send -t 2000 -c dnd_status "Notification Mode" "Do Not Disturb OFF (Notifications Enabled)"; else notify-send -t 2000 -c dnd_status "Notification Mode" "Do Not Disturb ON (Notifications Muted)"; sleep 0.1; makoctl mode -a dnd; fi'
 
