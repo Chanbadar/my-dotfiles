@@ -29,7 +29,7 @@ PACMAN_PKGS=(
     xdg-desktop-portal-wlr xdg-desktop-portal-gtk
     polkit-kde-agent xdg-user-dirs tlp
     ttf-font-awesome noto-fonts noto-fonts-emoji
-    breeze-gtk qt5ct qt6ct
+    breeze-gtk qt5ct qt6ct fd
 )
 
 sudo pacman -S --needed --noconfirm "${PACMAN_PKGS[@]}"
