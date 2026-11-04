@@ -98,12 +98,12 @@ bindsym $mod+Shift+n exec bash -c 'if makoctl mode | grep -q "dnd"; then makoctl
 # 3. EKRAN GÖRÜNTÜSÜ VE KAYIT (grim + slurp + swappy)
 # ------------------------------------------------------------------------------
 
-# Ekran Bölgesi Seç -> Swappy ile Aç/Düzenle (Print veya Meta+Shift+S)
+# Ekran Bölgesi Seç -> Swappy ile Aç/Düzenle (Print veya Shift+Print)
 bindsym Print exec grim -g "$(slurp)" - | swappy -f -
-bindsym $mod+Shift+s exec grim -g "$(slurp)" - | swappy -f -
+bindsym Shift+Print exec grim -g "$(slurp)" - | swappy -f -
 
-# Ekran Bölgesi Seç -> Doğrudan Panoya Kopyala (Shift+Print)
-bindsym Shift+Print exec grim -g "$(slurp)" - | wl-copy
+# Ekran Bölgesi Seç -> Doğrudan Panoya Kopyala (Meta+Shift+S)
+bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
 
 # Tam Ekran Görüntüsü Al -> Resimler Klasörüne Kaydet (Ctrl+Print)
 bindsym Ctrl+Print exec grim ~/Pictures/ps_$(date +'%Y-%m-%d_%H%M%S').png
@@ -114,9 +114,6 @@ bindsym $mod+Shift+r exec wf-recorder -g "$(slurp)" -f ~/Videos/recording_$(date
 # ------------------------------------------------------------------------------
 # 4. PENCERE VE TILING YÖNETİMİ
 # ------------------------------------------------------------------------------
-
-# Ekran Kilitleme (Meta+L)
-bindsym $mod+l exec swaylock
 
 # Pencere Kapatma (Meta+Shift+Q veya Alt+F4)
 bindsym $mod+Shift+q kill
@@ -234,6 +231,9 @@ bindsym XF86AudioStop exec playerctl stop
 # ------------------------------------------------------------------------------
 # 7. KLAVYE DÜZENİ VE EKRAN KİLİT
 # ------------------------------------------------------------------------------
+
+# Ekran Kilitleme (Meta+L)
+bindsym $mod+l exec swaylock
 
 # Klavye Düzeni Değiştirme (Meta+Space ile TR/US Geçişi)
 input "type:keyboard" {
