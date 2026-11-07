@@ -54,6 +54,28 @@ cp -rf "$SCRIPT_DIR/.config/"* ~/.config/
 mkdir -p ~/Desktop ~/Downloads ~/Templates ~/Public ~/Documents ~/Music ~/Pictures ~/Videos ~/Pictures/Wallpapers/lock-screen
 xdg-user-dirs-update --force
 
+# 4.1. Generate Thunar Document Templates
+echo "Generating file templates for Thunar right-click menu..."
+cat << 'EOF' > ~/Templates/"Text Document.txt"
+EOF
+
+cat << 'EOF' > ~/Templates/"Bash Script.sh"
+#!/bin/bash
+EOF
+chmod +x ~/Templates/"Bash Script.sh"
+
+cat << 'EOF' > ~/Templates/"Python Script.py"
+#!/usr/bin/env python3
+EOF
+
+cat << 'EOF' > ~/Templates/"Markdown File.md"
+# Title
+EOF
+
+# Touch empty files for docx and pptx formats
+touch ~/Templates/"Word Document.docx"
+touch ~/Templates/"PowerPoint Presentation.pptx"
+
 # 5. System Theme & Portal Integration
 echo "Applying dark theme configurations..."
 
