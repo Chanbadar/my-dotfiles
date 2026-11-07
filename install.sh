@@ -140,6 +140,18 @@ touch ~/Templates/"Word Document.docx"
 touch ~/Templates/"PowerPoint Presentation.pptx"
 
 # 6. System Theme & Portal Integration
+# Auto-start Sway on TTY1 login
+if ! grep -q "exec sway" ~/.bash_profile 2>/dev/null; then
+    echo "Configuring Sway auto-start on TTY1..."
+    cat << 'EOF' >> ~/.bash_profile
+
+# Auto-start Sway desktop environment on TTY1
+if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
+    exec sway
+fi
+EOF
+fi
+
 echo "Applying dark theme configurations..."
 
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
@@ -157,18 +169,6 @@ xdg-mime default org.pwmt.zathura.desktop application/pdf
 
 # Set Configuration Permissions
 chmod +x ~/.config/sway/config 2>/dev/null || true
-
-# Auto-start Sway on TTY1 login
-if ! grep -q "exec sway" ~/.bash_profile 2>/dev/null; then
-    echo "Configuring Sway auto-start on TTY1..."
-    cat << 'EOF' >> ~/.bash_profile
-
-# Auto-start Sway desktop environment on TTY1
-if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
-    exec sway
-fi
-EOF
-fi
 
 # 7. TLP Power Management Configuration
 echo "Configuring TLP power management..."
