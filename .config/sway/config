@@ -88,7 +88,7 @@ bindsym $mod+Shift+e exec wlogout
 # Alt+Tab Pencere Geçişi (Rofi ile açık pencereler arası geçiş)
 bindsym Mod1+Tab exec rofi -show window
 
-# Deep File & Folder Search (Meta+Shift+D)
+# Derin Klasor & Dosya Arama (Meta+Shift+D)
 bindsym $mod+Shift+d exec bash -c 'target=$(fd --hidden --exclude .git . ~ | rofi -dmenu -i -p "Search File or Folder:"); [ -n "$target" ] && xdg-open "$target"'
 
 # Rahatsız Etme Modu (Meta+Shift+N) - Bildirimleri Aç / Kapat
@@ -207,6 +207,9 @@ bindsym $mod+Shift+8 move container to workspace number 8
 # Ekranlar/Monitörler Arası Pencere Taşıma (Meta+Shift+Sol/Sağ)
 bindsym $mod+Shift+Greater move container to output right
 bindsym $mod+Shift+Less move container to output left
+
+# Ekrani 60 Hz Yapma
+output eDP-1 mode 1920x1080@60.015Hz
 
 # ------------------------------------------------------------------------------
 # 6. MEDYA, SES VE PARLAKLIK KONTROLLERİ
