@@ -27,16 +27,16 @@ echo "Updating system repositories and installing dependencies..."
 
 # 3. Official Arch Linux Packages (Includes linux-headers from core repo)
 PACMAN_PKGS=(
-    sway swayidle swaylock waybar mako rofi alacritty
+    sway swaybg foot wmenu swayidle swaylock waybar mako rofi alacritty
     thunar thunar-archive-plugin file-roller
     librewolf imv zathura zathura-pdf-mupdf
     grim slurp swappy wf-recorder cliphist wl-clipboard
-    brightnessctl playerctl wireplumber pipewire-audio
+    brightnessctl pavucontrol playerctl wireplumber pipewire-audio
     blueman network-manager-applet plasma-systemmonitor
     xdg-desktop-portal-wlr xdg-desktop-portal-gtk
     polkit-kde-agent xdg-user-dirs tlp
     ttf-font-awesome noto-fonts noto-fonts-emoji
-    breeze-gtk qt5ct qt6ct fd linux-headers
+    breeze-gtk qt5ct qt6ct fd linux-headers xorg-xwayland
 )
 
 sudo pacman -S --needed --noconfirm "${PACMAN_PKGS[@]}"
