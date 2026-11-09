@@ -11,8 +11,8 @@ set $down j
 set $up k
 set $right l
 
-# Terminal (Alacritty)
-set $term alacritty
+# Terminal (Foot)
+set $term foot
 
 # ------------------------------------------------------------------------------
 # 1. OTOMATİK BAŞLATMA (AUTOSTART / EXEC)
@@ -56,7 +56,7 @@ exec_always gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 # 2. UYGULAMA BAŞLATICI KISAYOLLARI
 # ------------------------------------------------------------------------------
 
-# Alacritty Terminal (Meta+Return veya Meta+R)
+# Foot Terminal (Meta+Return veya Meta+R)
 bindsym $mod+Return exec $term
 bindsym $mod+r exec $term
 
