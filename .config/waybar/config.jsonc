@@ -164,13 +164,7 @@
     "custom/power": {
         "format" : "⏻ ",
         "tooltip": false,
-        "menu": "on-click",
-        "menu-file": "$HOME/.config/waybar/power_menu.xml",
-        "menu-actions": {
-            "shutdown": "shutdown",
-            "reboot": "reboot",
-            "suspend": "systemctl suspend",
-            "hibernate": "systemctl hibernate"
+	"on-click": "pkill waybar"
         }
     }
 }
